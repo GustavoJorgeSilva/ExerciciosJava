@@ -18,13 +18,16 @@ public class Exercicio3_Estoque {
         produto.quantidade = leitor.nextInt();
         System.out.println("Informações do produto: "+ produto);
 
-
+        System.out.println();
         System.out.println("Entre com o numero de produtos que deseja adicionar ao estoque: ");
         int entrada = leitor.nextInt();
         produto.adicionarProdutos(entrada);
 
+        System.out.println();
         System.out.println("Quantidade atualizada: ");
         System.out.println(produto);
+
+        System.out.println();
         System.out.println("Entre com o numero de produtos que deseja retirar do estoque:");
         int retirada = leitor.nextInt();
         produto.removerProdutos(retirada);
