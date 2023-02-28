@@ -17,7 +17,7 @@ public class Exercicio6 {
         c = leitor.nextDouble();
 
         triangulo = (a * c) / 2; // Área de um triângulo = (base x altura) / 2 foi considerado base A e altura C
-        circulo = 3.14159 * (c * c); // Área da circunferência = pi x raio x raio foi considerado C como raio
+        circulo = 3.14159 * (c * c); // Área do circulo = pi x raio x raio foi considerado C como raio
         trapezio = (a + b) * c / 2;//Área de um trapézio = (base maior + base menor) x altura / 2 A e B bases e C altura
         quadrado = b * b; // Área de um quadrado = lado x lado foi considerado B como lado
         retangulo = a * b; // Área de um retângulo = base x altura foi considerado LADOS A e B
