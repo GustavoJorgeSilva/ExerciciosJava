@@ -23,7 +23,8 @@ public class Produto {
     public String toString() {
         return "Produto - " +
                 "Nome: '" + nome + '\'' +
-                ", Preco R$ " + preco +
-                ", Quantidade: " + quantidade+" unidades";
+                String.format(", R$ %.2f",preco) +
+                ", Quantidade: " + quantidade +" unidades"+
+                ", Valor total em estoque: " + String.format("R$ %.2f", valorTotalEstoque());
     }
 }
