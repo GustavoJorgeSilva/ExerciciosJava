@@ -34,7 +34,7 @@ public class Exercicio10_MediaPares {
 
         if (pares > 0){
             mediaDosPares = somaDosPares / pares;
-            System.out.printf("MEDIA DOS PARES = %.2f",mediaDosPares);
+            System.out.printf("HAHA DOS PARES = %.2f",mediaDosPares);
         } else {
             System.out.println("NENHUM NUMERO PAR");
         }

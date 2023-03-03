@@ -10,7 +10,7 @@ public class Exercicio3_Negativos {
         System.out.print("Digite um numero de 1-10: ");
         int n = leitor.nextInt();
 
-        if (n >10 || n < 0){
+        while (n <= 0 || n > 10) {
             System.out.println("Valor invalido, digite um numero de 1-10");
             n = leitor.nextInt();
         }
@@ -19,13 +19,13 @@ public class Exercicio3_Negativos {
 
         for (int i = 0; i < vetor.length; i++) {
             leitor.nextLine();
-            System.out.print("Digite um numero: ");
+            System.out.printf("Digite o %do numero: ", i + 1);
             vetor[i] = leitor.nextInt();
         }
 
         System.out.println("NUMEROS NEGATIVOS: ");
         for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] < 0){
+            if (vetor[i] < 0) {
                 System.out.println(vetor[i]);
             }
         }

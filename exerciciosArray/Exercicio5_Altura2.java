@@ -5,7 +5,7 @@ package com.udemy.cursojavacompletonelioalves.exercicios.exerciciosArray;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+
 
 public class Exercicio5_Altura2 {
     public static void main(String[] args) throws IOException {
