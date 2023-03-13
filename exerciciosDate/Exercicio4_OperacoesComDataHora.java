@@ -42,6 +42,7 @@ public class Exercicio4_OperacoesComDataHora {
         System.out.println("t2 Horas = " + t2.toHours());
         System.out.println("t3 Dias = " + t3.toDays());
         System.out.println("t4 Dias = " + t4.toDays());
+        System.out.println("t4 Horas = " + t4.toHours());
 
 
 
