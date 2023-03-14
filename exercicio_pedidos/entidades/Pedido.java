@@ -2,25 +2,28 @@ package com.udemy.cursojavacompletonelioalves.exercicios.exercicio_pedidos.entid
 
 import com.udemy.cursojavacompletonelioalves.exercicios.exercicioPOO.entidades.enums.StatusDePedido;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Pedido {
 
+    private final static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss");
     private Date moment;
     private StatusDePedido status;
 
+    private Cliente cliente;
     private List<ItensPedido> itensPedidos = new ArrayList<>();
-    private List<Cliente> clientes = new ArrayList<>();
 
     public Pedido() {
 
     }
 
-    public Pedido(Date moment, StatusDePedido status) {
+    public Pedido(Date moment, StatusDePedido status, Cliente cliente) {
         this.moment = moment;
         this.status = status;
+        this.cliente = cliente;
     }
 
     public Date getMoment() {
@@ -39,33 +42,48 @@ public class Pedido {
         this.status = status;
     }
 
-    public List<ItensPedido> getItensPedidos() {
-        return itensPedidos;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public List<Cliente> getClientes() {
-        return clientes;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
+
 
     public void adicionarItem(ItensPedido itensPedido){
         itensPedidos.add(itensPedido);
     }
 
-    @Override
-    public String toString() {
-        return "Pedido{" +
-                "moment=" + moment +
-                ", status=" + status +
-                ", itensPedidos=" + itensPedidos +
-                ", clientes=" + clientes +
-                '}';
+    public void removerItem(ItensPedido itensPedido){
+        itensPedidos.remove(itensPedido);
     }
 
+    public double total(){
+        double soma = 0.0;
+        for (ItensPedido item : itensPedidos){
+            soma += item.subTotal();
+        }
+        return soma;
+    }
 
-
-
-
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hora do pedido: ");
+        sb.append(sdf.format(moment) + "\n");
+        sb.append("Status do pedido: ");
+        sb.append(status + "\n");
+        sb.append("Cliente: ");
+        sb.append(cliente + "\n");
+        sb.append("Itens do pedido:\n ");
+        for (ItensPedido item : itensPedidos){
+            sb.append(item + "\n");
+        }
+        sb.append("Preço total: ");
+        sb.append(String.format("%.2f", total()));
+        return sb.toString();
+    }
 }
 
 
