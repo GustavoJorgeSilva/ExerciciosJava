@@ -24,5 +24,17 @@ public class Program2 {
         acc3.credito(600);
         System.out.println(acc3.getSaldo());
 
+//      Polimorfismo
+
+        Conta x = new Conta(1003,"Alex",1000.0);
+        Conta y = new ContaPoupanca(1004,"Josefina",1000.0,0.002);
+
+        x.saque(50);
+        y.saque(50);
+
+        System.out.println(x.getSaldo());
+        System.out.println(y.getSaldo());
+
+
     }
 }
