@@ -41,16 +41,15 @@ public class Exercicio7_SummaryCSV {
                 itemCsv = br.readLine(); // comando para ler a proxima linha
             }
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))) { // comandos para criar um arquivo com base no caminho escolhido mais acima no targetFileStr
-            for(ProdutoArq itens : produtos){ // for each para percorrer a lista de produtos
-                bw.write(itens.getNome() + "," + String.format("%.2f ", itens.total())); // comando para escrever uma linha com o nome do produto e o valor total com o metodo de soma da quantidade * preco
-                bw.newLine(); // comando pra iniciar uma nova linha ja que o buffered não da quabra de linha automatica
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))) { // comandos para criar um arquivo com base no caminho escolhido mais acima no targetFileStr
+                for (ProdutoArq itens : produtos) { // for each para percorrer a lista de produtos
+                    bw.write(itens.getNome() + "," + String.format("%.2f ", itens.total())); // comando para escrever uma linha com o nome do produto e o valor total com o metodo de soma da quantidade * preco
+                    bw.newLine(); // comando pra iniciar uma nova linha ja que o buffered não da quabra de linha automatica
+                }
+                System.out.println(targetFileStr + " CRIADO");
+            } catch (IOException e) {
+                System.out.println("Erro ao escrever arquivo: " + e.getMessage()); // Tratamento de excessoes
             }
-            System.out.println(targetFileStr + " CRIADO");
-        }
-        catch (IOException e){
-            System.out.println("Erro ao escrever arquivo: " + e.getMessage()); // Tratamento de excessoes
-        }
         } catch (IOException e) {
             System.out.println("Erro ao ler arquivo: " + e.getMessage());
         }
