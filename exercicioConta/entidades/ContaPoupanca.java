@@ -2,27 +2,27 @@ package com.udemy.cursojavacompletonelioalves.exercicios.exercicioConta.entidade
 
 public final class ContaPoupanca extends Conta{
 
-    private double taxaDeJuros;
+    private double rendimento;
 
     public ContaPoupanca(){
         super();
     }
 
-    public ContaPoupanca(Integer numeroConta, String titularConta, Double saldo, double taxaDeJuros) {
+    public ContaPoupanca(Integer numeroConta, String titularConta, Double saldo, double rendimento) {
         super(numeroConta, titularConta, saldo);
-        this.taxaDeJuros = taxaDeJuros;
+        this.rendimento = rendimento;
     }
 
-    public double getTaxaDeJuros() {
-        return taxaDeJuros;
+    public double getRendimento() {
+        return rendimento;
     }
 
-    public void setTaxaDeJuros(double taxaDeJuros) {
-        this.taxaDeJuros = taxaDeJuros;
+    public void setRendimento(double rendimento) {
+        this.rendimento = rendimento;
     }
 
     public void atualizarSaldo(){
-        saldo += saldo * taxaDeJuros;
+        saldo += saldo * rendimento;
     }
 
     @Override

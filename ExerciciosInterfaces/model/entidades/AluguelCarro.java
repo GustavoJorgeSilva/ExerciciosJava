@@ -45,7 +45,7 @@ public class AluguelCarro {
         this.veiculo = veiculo;
     }
 
-    public Fatura getFatura() {
+    public Fatura   getFatura() {
         return fatura;
     }
 
